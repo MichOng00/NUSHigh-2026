@@ -141,7 +141,7 @@ def speed_from_fingers(fingers):
 # ROBOT CONTROL
 # ============================================================================
 
-def control_robot_SB(direction, speed, got):
+def control_robot_SB(got, direction, speed):
     """
     Send movement commands to the UGOT robot based on direction and speed.
     
@@ -166,7 +166,7 @@ def control_robot_SB(direction, speed, got):
     elif direction == "Right":
         got.balance_turn_speed(3, speed * 2)
 
-def control_robot_WL(direction, speed, got):
+def control_robot_WL(got, direction, speed):
     """
     Send movement commands to the UGOT robot based on direction and speed.
     
@@ -191,7 +191,7 @@ def control_robot_WL(direction, speed, got):
     elif direction == "Right":
         got.wheelleg_turn_speed(3, speed * 2)
 
-def control_robot_mec(direction, speed, got):
+def control_robot_mec(got, direction, speed):
     """
     Send movement commands to the UGOT robot based on direction and speed.
     
@@ -221,7 +221,7 @@ def control_robot_mec(direction, speed, got):
 # MAIN FUNCTION
 # ============================================================================
 
-def gesture_control(cap, got, robot_type = ROBOT_TYPE):
+def gesture_control(got, cap, robot_type = ROBOT_TYPE):
     """
     Main gesture control loop using MediaPipe hand detection.
     
@@ -299,11 +299,11 @@ def gesture_control(cap, got, robot_type = ROBOT_TYPE):
 
             # Execute robot movement based on detected gestures
             if robot_type == "SB":
-                control_robot_SB(direction, speed, got)
+                control_robot_SB(got, direction, speed)
             elif robot_type == "WL":
-                control_robot_WL(direction, speed, got)
+                control_robot_WL(got, direction, speed)
             elif robot_type == "mec":
-                control_robot_mec(direction, speed, got)
+                control_robot_mec(got, direction, speed)
 
             # Display current speed on screen
             cv2.putText(
@@ -330,7 +330,7 @@ if __name__ == "__main__":
 
         if not cap.isOpened():
             print("❌ Cannot open webcam")
-        gesture_control(cap, got, ROBOT_TYPE)
+        gesture_control(got, cap, ROBOT_TYPE)
     finally:
         cap.release()
         cv2.destroyAllWindows()
