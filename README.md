@@ -10,7 +10,7 @@ For UGOT files, the function names indicate the type of UGOT used in the program
 For example, `UGOT_line_follow.py` contains code for any UGOT robot to follow a line.
 Within `UGOT_line_follow.py`, the function `line_follow_SB()` is used specifically for the self-balancing car.
 
-You should upload or create the `constants.py` file in UPython before using any of the main program files. Change the `ROBOT_TYPE` variable according to the robot you are using.
+You should upload or create the `constants.py` file in UPython before using any of the main program files. Change the `ROBOT_TYPE` and `IP_ADDRESS` variables according to the robot you are using.
 
 Note that since the base of the engineering robot is the mecanum wheel car, there is no separate code for the engineering robot chassis movement.
 
