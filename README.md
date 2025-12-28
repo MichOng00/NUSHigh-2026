@@ -14,6 +14,9 @@ If there is no robot specified in the function name, the code is valid for all t
 
 You should upload or create the `constants.py` file in UPython before using any of the main UGOT program files. Change the `ROBOT_TYPE` and `IP_ADDRESS` variables according to the robot you are using.
 
+For more information on the UGOT functions, see the [documentation](https://docs.ubtrobot.com/ugot/#/en-us/extension/python_sdk/version).
+Most of the commands that you will need can be found in the [motion (Sports)](https://docs.ubtrobot.com/ugot/#/en-us/extension/python_sdk/model), [AI vision](https://docs.ubtrobot.com/ugot/#/en-us/extension/python_sdk/vision), [screen](https://docs.ubtrobot.com/ugot/#/en-us/extension/python_sdk/screen), [sound and light](https://docs.ubtrobot.com/ugot/#/en-us/extension/python_sdk/light), and [sensor](https://docs.ubtrobot.com/ugot/#/en-us/extension/python_sdk/sensor) sections.
+
 ## Getting started
 1. Visit the UPython [website](py.ubtrobot.com/gl). 
 2. Change the language using the settings at the bottom left corner of the screen.![](language.png)
