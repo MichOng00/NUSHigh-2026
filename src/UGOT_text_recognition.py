@@ -33,7 +33,7 @@ if __name__ == "__main__":
                 if cv2.waitKey(1) & 0xFF == ord("q"):
                     break
 
-            # Display color on UGOT screen
+            # Display written color on UGOT screen
             text = text.lower().replace(" ", "")
             if "white" in text:
                 got.screen_display_background(1)

@@ -49,7 +49,7 @@ if __name__ == "__main__":
         got.balance_start_balancing()
     elif ROBOT_TYPE == "WL":
         got.wheelleg_start_balancing()
-    time.sleep(2)
+    time.sleep(1)
     try:
         while True:
             frame = got.read_camera_data()
@@ -66,7 +66,7 @@ if __name__ == "__main__":
             elif ROBOT_TYPE == "WL":
                 line_follow_WL(got, 0.25, 10)
             elif ROBOT_TYPE == "mec":
-                line_follow_mec(got, 0.25, 10)
+                line_follow_mec(got, 0.2, 10)
 
             
     finally:
@@ -74,4 +74,6 @@ if __name__ == "__main__":
             got.balance_stop_balancing()
         elif ROBOT_TYPE == "WL":
             got.wheelleg_stop_balancing()
+        elif ROBOT_TYPE == "mec":
+            got.mecanum_stop()
         cv2.destroyAllWindows()
