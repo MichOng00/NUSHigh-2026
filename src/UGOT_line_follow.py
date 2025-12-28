@@ -6,7 +6,7 @@ import cv2
 
 # Initialize UGOT
 got = ugot.UGOT()
-got.initialize('192.168.1.136')
+got.initialize(IP_ADDRESS)
 
 got.load_models(["line_recognition"])
 got.set_track_recognition_line(0)
@@ -58,7 +58,8 @@ if __name__ == "__main__":
                 data = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
 
                 cv2.imshow("UGOT Camera", data)
-                cv2.waitKey(1)
+                if cv2.waitKey(1) & 0xFF == ord("q"):
+                    break
             
             if ROBOT_TYPE == "SB":
                 line_follow_SB(got, 0.25, 10)
