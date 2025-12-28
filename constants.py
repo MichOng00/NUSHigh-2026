@@ -1,0 +1,1 @@
+ROBOT_TYPE = "SB" # options: "SB", "WL", "mec"
