@@ -9,11 +9,11 @@ except ImportError:
 detector = FER(mtcnn=True)
 
 EMOJI_MAP = {
-    "happy": ":)))",
-    "angry": "8[",
+    "happy": ":D",
+    "angry": ">:(",
     "sad": ":(",
-    "neutral": ": |",
-    "surprise": ":)",
+    "neutral": ":|",
+    "surprise": ":O",
     "fear": ":')",
     "disgust": ": {}",
 }
